@@ -1,0 +1,12 @@
+<p>child works!</p>
+
+<!-- Step 3: -->
+<p>Message Received From Parent : {{ messageFromParent }}</p>
+
+<ul>
+  <li *ngFor="let val of convertObjKrishna(objFromParent)">{{ val }}</li>
+</ul>
+
+<ul *ngFor="let obj of arrayFromParent">
+  <li *ngFor="let val of convertObjKrishna(obj)">{{ val }}</li>
+</ul>
