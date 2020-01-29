@@ -1,0 +1,12 @@
+<p>parent1 works!</p>
+<p>Message Received From Child : {{ msgfromChild }}</p>
+<p>Object Recevied from Child : {{ receivedObj.fname }}</p>
+<ul>
+  <li *ngFor="let user of receiveArrray">{{ user }}</li>
+</ul>
+<hr />
+<app-child1
+  (sendData)="receiveData($event)"
+  (sendObj)="receiveObj($event)"
+  (sendArr)="receiveArr($event)"
+></app-child1>
