@@ -1,0 +1,28 @@
+<form #userForm="ngForm">
+  <label for="fname">First Name : </label>
+  <input type="text" ngModel name="fname" />
+  <br />
+  <label for="lname">Last Name : </label>
+  <input type="text" ngModel name="lname" />
+  <br />
+  <button type="button" (click)="addUser(userForm)">Add User</button>
+</form>
+
+<hr />
+
+<table border="1">
+  <thead>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <td>{{ user.fname }}</td>
+      <td>{{ user.lname }}</td>
+      <td><button (click)="editUser(i)">Edit</button></td>
+      <td><button (click)="deleteUse(i)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
