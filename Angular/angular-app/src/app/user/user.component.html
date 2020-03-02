@@ -1,11 +1,12 @@
 <form #userForm="ngForm">
   <label for="fname">First Name : </label>
-  <input type="text" ngModel name="fname" />
+  <input type="text" [(ngModel)]="user.fname" name="fname" />
   <br />
   <label for="lname">Last Name : </label>
-  <input type="text" ngModel name="lname" />
+  <input type="text" [(ngModel)]="user.lname" name="lname" />
   <br />
   <button type="button" (click)="addUser(userForm)">Add User</button>
+  <button type="button" (click)="updateUser()">Update</button>
 </form>
 
 <hr />

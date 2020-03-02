@@ -6,7 +6,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./user.component.css"]
 })
 export class UserComponent implements OnInit {
+  user = {
+    fname: "",
+    lname: ""
+  };
   users = [];
+  index: any;
   constructor() {}
 
   ngOnInit() {
@@ -24,6 +29,11 @@ export class UserComponent implements OnInit {
   }
 
   editUser(i) {
-    console.log(i);
+    this.index = i;
+    this.user = Object.assign({}, this.users[this.index]);
+  }
+  updateUser() {
+    this.users[this.index] = this.user;
+    localStorage.setItem("users", JSON.stringify(this.users));
   }
 }

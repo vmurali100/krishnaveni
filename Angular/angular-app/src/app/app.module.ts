@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 import { ParentComponent } from "./ParentToChild/parent/parent.component";
 import { ChildComponent } from "./ParentToChild/child/child.component";
@@ -9,6 +10,7 @@ import { Child1Component } from "./ChildToParent/child1/child1.component";
 import { Comp1Component } from "./SiblingComponents/comp1/comp1.component";
 import { Comp2Component } from "./SiblingComponents/comp2/comp2.component";
 import { UserComponent } from "./user/user.component";
+import { UserServerComponent } from "./user-server/user-server.component";
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { UserComponent } from "./user/user.component";
     Child1Component,
     Comp1Component,
     Comp2Component,
-    UserComponent
+    UserComponent,
+    UserServerComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
